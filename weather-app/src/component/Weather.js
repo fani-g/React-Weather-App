@@ -68,17 +68,22 @@ const Weather = () => {
                 <h2>{weatherData.name}<i className="bi bi-geo-alt-fill text-danger"></i> </h2>
                 <p>Date: {currentDate}</p>
                 <h1>{weatherData.main.temp}°C </h1>
-                <p>{weatherData.weather[0].description}</p>
+                <div><small>feels like {weatherData.main.feels_like}°C</small></div>
+                <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="" />
+                {/* <p>{weatherData.weather[0].description}</p> */}
                 <CardLayout>
                   <Card>
-                    <span><i className="bi bi-moisture fs-3"></i> Humidity</span> {weatherData.main.humidity}%
+                    <span><i className="bi bi-droplet-half fs-3"></i> Humidity</span> {weatherData.main.humidity}%
                   </Card>
                   {/*<p>Pressure : {weatherData.main.pressure}</p> */}
                   <Card>
                     <span><i className="bi bi-wind fs-3"></i> Wind Speed</span> {weatherData.wind.speed}m/s
                   </Card>
                   <Card>
-                  <span><i className="bi bi-thermometer-half fs-3"></i>Feels like</span> {weatherData.main.feels_like}°C
+                  <span><i className="bi bi-thermometer-low fs-3"></i>Min<p>{weatherData.main.temp_min}°C</p></span>
+                  </Card>
+                  <Card>
+                  <span><i className="bi bi-thermometer-high fs-3"></i>Max<p>{weatherData.main.temp_max}°C</p></span> 
                   </Card>
                 </CardLayout>
             </WeatherCard>
