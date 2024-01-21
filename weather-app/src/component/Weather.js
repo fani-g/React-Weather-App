@@ -33,6 +33,7 @@ const Weather = () => {
         );
         setWeatherData(response.data);
         console.log(response.data); //You can see all the weather data in console log
+
       } catch (error) {
         console.error(error);
       }
@@ -64,20 +65,20 @@ const Weather = () => {
         </form>
           {weatherData ? (
             <WeatherCard>
-                <h2>{weatherData.name}<i class="bi bi-geo-alt-fill text-danger"></i> </h2>
+                <h2>{weatherData.name}<i className="bi bi-geo-alt-fill text-danger"></i> </h2>
                 <p>Date: {currentDate}</p>
-                <p><h1>{weatherData.main.temp}°C </h1></p>
+                <h1>{weatherData.main.temp}°C </h1>
                 <p>{weatherData.weather[0].description}</p>
                 <CardLayout>
                   <Card>
-                    <span><i class="bi bi-moisture fs-3"></i> Humidity</span> {weatherData.main.humidity}%
+                    <span><i className="bi bi-moisture fs-3"></i> Humidity</span> {weatherData.main.humidity}%
                   </Card>
                   {/*<p>Pressure : {weatherData.main.pressure}</p> */}
                   <Card>
-                    <span><i class="bi bi-wind fs-3"></i> Wind Speed</span> {weatherData.wind.speed}m/s
+                    <span><i className="bi bi-wind fs-3"></i> Wind Speed</span> {weatherData.wind.speed}m/s
                   </Card>
                   <Card>
-                  <span><i class="bi bi-thermometer-half fs-3"></i>Feels like</span> {weatherData.main.feels_like}°C
+                  <span><i className="bi bi-thermometer-half fs-3"></i>Feels like</span> {weatherData.main.feels_like}°C
                   </Card>
                 </CardLayout>
             </WeatherCard>
