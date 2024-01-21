@@ -23,8 +23,8 @@ const Weather = () => {
 
     //const api_key = '97db02c5ed8dfb696b218cfa99786f7d';
     //const api_call ='https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}';
-  
-    //
+    //const iconUrl = 'https://openweathermap.org/img/wn/${icon}@2x.png'
+    
     const fetchData = async () => {
       try {
         //A GET request can be made with Axios to “get” data from a third party server like the openweathermap
@@ -67,7 +67,6 @@ const Weather = () => {
                 <h2>{weatherData.name}<i class="bi bi-geo-alt-fill text-danger"></i> </h2>
                 <p>Date: {currentDate}</p>
                 <p><h1>{weatherData.main.temp}°C </h1></p>
-                
                 <p>{weatherData.weather[0].description}</p>
                 <CardLayout>
                   <Card>
